@@ -53,7 +53,7 @@ describe('The phpcs provider for Linter', () => {
             ' TRUE, FALSE and NULL must be lowercase; ' +
             'expected &quot;true&quot; but found &quot;TRUE&quot;');
           expect(messages[0].filePath).toBe(badPath);
-          expect(messages[0].range).toEqual([[1, 5], [1, 6]]);
+          expect(messages[0].range).toEqual([[1, 5], [1, 9]]);
         })
       );
     });
@@ -86,7 +86,7 @@ describe('The phpcs provider for Linter', () => {
             ' TRUE, FALSE and NULL must be lowercase; ' +
             'expected &quot;true&quot; but found &quot;TRUE&quot;');
           expect(messages[1].filePath).toBe(tabsPath);
-          expect(messages[1].range).toEqual([[2, 6], [2, 7]]);
+          expect(messages[1].range).toEqual([[2, 6], [2, 10]]);
         })
       );
     });

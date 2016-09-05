@@ -117,12 +117,10 @@ module.exports =
                     column = col + 1
                     break
 
-            startPoint = [message.line - 1, column - 1]
-            endPoint = [message.line - 1, column]
             msg = {
               type: message.type
               filePath,
-              range: [startPoint, endPoint]
+              range: helpers.rangeFromLineNumber(textEditor, message.line - 1, column - 1)
             }
             if @showSource
               msg.html = '<span class="badge badge-flexible">' + (message.source or 'Unknown') + '</span> '
